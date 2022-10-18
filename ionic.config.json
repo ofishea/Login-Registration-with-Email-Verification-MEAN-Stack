@@ -1,0 +1,8 @@
+{
+  "name": "Wallet-App-Ionic-Angular",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}
