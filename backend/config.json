@@ -1,0 +1,13 @@
+﻿{
+    "connectionString": "mongodb://localhost:27017",
+    "secret": "VeGeT@BlE01",
+    "emailFrom": "info@plito.io",
+    "smtpOptions": {
+        "host": "smtp.ethereal.email",
+        "port": 587,
+        "auth": {
+            "user": "lela7@ethereal.email",
+            "pass": "pVXVGuKkAqgepSFpeC"
+        }
+    }
+} 
