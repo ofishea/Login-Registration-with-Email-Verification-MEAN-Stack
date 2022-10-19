@@ -1,0 +1,139 @@
+﻿<ion-header class="ion-no-border d-md-none" [translucent]="true">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-button (click)="onBack()" color="dark">
+            <ion-icon name="arrow-back"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      <ion-title class="ion-text-center" *ngIf="isAddMode">Create Account</ion-title>
+      <ion-title class="ion-text-center" *ngIf="!isAddMode">Edit Account</ion-title>
+       <ion-buttons slot="end">
+         <ion-button (click)="onSettings()" color="dark">
+           <ion-icon name="cog-outline"></ion-icon>
+         </ion-button>
+       </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <div style="background: #EAB355;">
+    <div class="profile_content ion-padding d-none d-md-block">
+        <div class="profile">
+          <ion-thumbnail>
+            <ion-icon name="log-out"></ion-icon>
+          </ion-thumbnail>
+        </div>
+      </div>
+    </div>
+  
+<ion-content>
+     <ion-grid fixed>
+    <ion-row class="ion-justify-content-center">
+    <div class="contain col-lg-10 col-md-10">
+  
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+        <div class="form-group input-item">
+          <ion-item lines="none">
+            <ion-input type="text" formControlName="firstName" placeholder="first name" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }"></ion-input>
+          </ion-item>
+          <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+            <div *ngIf="f.firstName.errors.required">First Name is required</div>
+          </div>
+            <ion-item lines="none">
+              <ion-input type="text" formControlName="lastName" placeholder="last name" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }"></ion-input>
+            </ion-item>
+            <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+              <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+            </div>
+        </div>
+    
+        <div class="form-group input-item">
+          <ion-item lines="none">
+            <ion-input type="text" formControlName="userName" placeholder="username" [ngClass]="{ 'is-invalid': submitted && f.userName.errors }"></ion-input>
+          </ion-item>
+          <div *ngIf="submitted && f.userName.errors" class="invalid-feedback">
+            <div *ngIf="f.userName.errors.required">Username is required</div>
+          </div>
+        </div>
+    
+    
+        <div class="form-group input-item">
+          <ion-item lines="none">
+            <ion-input type="email" formControlName="email" placeholder="email address" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"></ion-input>
+          </ion-item>
+          <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+            <div *ngIf="f.email.errors.required">Email is required</div>
+            <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+        </div>
+        </div>
+    
+        <div class="form-group input-item">
+          <ion-item lines="none">
+            <ion-input [type]="ptype" formControlName="password" placeholder="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }"></ion-input>
+            <div class="end-slot password" slot="end">
+              <ion-icon name="eye-off-outline" *ngIf="ptype=='text'" (click)="switchType()"></ion-icon>
+              <ion-icon name="eye-outline" *ngIf="ptype=='password'" (click)="switchType()"></ion-icon>
+            </div>
+          </ion-item>
+          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">Password is required</div>
+            <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+        </div>
+        </div>
+    
+        <div class="form-group input-item">
+          <ion-item lines="none">
+            <ion-input [type]="ptype" formControlName="confirmPassword" placeholder="confirm password" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }"></ion-input>
+            <div class="end-slot password" slot="end">
+              <ion-icon name="eye-off-outline" *ngIf="ptype=='text'" (click)="switchType()"></ion-icon>
+              <ion-icon name="eye-outline" *ngIf="ptype=='password'" (click)="switchType()"></ion-icon>
+            </div>
+          </ion-item>
+          <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+            <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
+            <div *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</div>
+          </div>
+        </div>
+    
+        <div class="form-group input-item">
+          <ion-item lines="none">
+            <ion-select mode="ios" interface="popover" placeholder="Select Country" value="brown" okText="Okay" cancelText="Dismiss" formControlName="country" [ngClass]="{ 'is-invalid': submitted && f.country.errors }">
+              <ion-select-option *ngFor="let item of countries" [value]="item.dial_code">
+                {{item.dial_code + ' ' + item.name}}
+              </ion-select-option>
+            </ion-select>
+            <ion-input type="tel" formControlName="phone" placeholder="phone number" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }"></ion-input>
+          </ion-item>
+          <div *ngIf="submitted && f.country.errors" class="invalid-feedback">
+            <div *ngIf="f.country.errors.required">Country is required</div>
+          </div>
+          <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+            <div *ngIf="f.phone.errors.required">Phone Number is required</div>
+        </div>
+        </div>
+        <div class="form-group input-item">
+            <ion-item lines="none">
+            <ion-select mode="ios" interface="popover" formControlName="role" value="brown" okText="Okay" cancelText="Dismiss" [ngClass]="{ 'is-invalid': submitted && f.role.errors }">
+                <ion-select-option value="Select Role"></ion-select-option>
+                <ion-select-option value="User">User</ion-select-option>
+                <ion-select-option value="Admin">Admin</ion-select-option>
+            </ion-select>
+        </ion-item>
+            <div *ngIf="submitted && f.role.errors" class="invalid-feedback">
+                <div *ngIf="f.role.errors.required">Role is required</div>
+            </div>
+        </div>
+        <div class="btn-holder ion-text-center">
+            <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            Save
+        </button>
+            </div>
+          </div>
+      </form>
+    
+      </div>
+    </ion-row>
+      </ion-grid>
+    
+    </ion-content>

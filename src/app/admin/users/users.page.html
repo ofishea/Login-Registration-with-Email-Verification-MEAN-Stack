@@ -1,0 +1,56 @@
+<ion-header class="ion-no-border d-md-none" [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Users</ion-title>
+  </ion-toolbar>
+</ion-header>
+<div style="background: #b4b2ad;">
+  <div class="profile_content ion-padding d-none d-md-block">
+      <div class="profile">
+        <ion-thumbnail>
+          <ion-icon name="log-out"></ion-icon>
+        </ion-thumbnail>
+      </div>
+    </div>
+  </div>
+
+<ion-content>
+ <ion-grid fixed>
+<ion-row class="ion-justify-content-center">
+<div class="contain col-lg-10 col-md-10">
+
+  <h5>All Users</h5>
+  <ion-item-sliding *ngFor="let account of accounts">
+    <ion-item-options side="start">
+      <ion-item-option color="warning" routerLink="edit/{{account.id}}">Edit</ion-item-option>
+    </ion-item-options>
+    <ion-item lines="none">
+      <ion-thumbnail>
+        <img src="assets/crypto-icons/btc.svg" />
+      </ion-thumbnail>
+      <div class="text">
+        <h5 style="font-weight: bold;">{{account.lastName}} {{account.firstName}} ({{account.userName}})</h5>
+        <ion-label>{{account.role}}</ion-label>
+      </div>
+      <ion-buttons slot="end">
+        <ion-button>
+          Edit
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+    <ion-item-options side="end">
+      <ion-item-option color="danger">
+        <button (click)="deleteAccount(account.id)" class="btn btn-sm btn-danger btn-delete-account" [disabled]="account.isDeleting">
+        <span *ngIf="account.isDeleting" class="spinner-border spinner-border-sm"></span>
+        <span *ngIf="!account.isDeleting">Delete</span>
+        </button>
+      </ion-item-option>
+    </ion-item-options>
+  </ion-item-sliding>
+
+              </div>
+                </ion-row>
+                </ion-grid>
+</ion-content>
