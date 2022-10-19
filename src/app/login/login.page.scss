@@ -16,42 +16,6 @@ ion-toolbar
 ion-content
 {
     --background: #b4b2ad;
-   .logo-holder
-   {
-       width: 100%;
-       .the-logo
-       {
-           position: relative;
-           width: fit-content;
-           margin: 1vw auto 0 auto;
-           img
-           {
-               height: 7rem;
-           }
-
-           .small-circle
-           {
-               border-radius: 50%;
-               border: 8px solid #c869f4d8;
-               background: #FBEEFF;
-               height: 2rem;
-               position: absolute;
-               top: 0;
-               right: 20px;
-               width: 2rem;
-           }
-
-           .name-holder
-           {
-               h1
-               {
-                   color: #FBEEFF;
-                   font-family: 'CSBold';
-                   margin-top: 5px;
-               }
-           }
-       }
-   }
 
    .the-form
    {
@@ -93,19 +57,6 @@ ion-content
        }
    }
 
-   .social-holder
-   {
-       margin-top: 20px;
-       .btn
-       {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-            height: 45px;
-            margin: 0 10px;
-            width: 45px;
-       }
-   }
-
    .bottom-holder
    {
        h5
@@ -113,14 +64,6 @@ ion-content
            color: #9496BA;
            font-family: 'CSBook';
            font-size: 12px;
-       }
-
-       h3
-       {
-           color: #FFFF;
-           font-family: 'CSMedium';
-           font-size: 12px;
-           margin-top: 0;
        }
    }
 }
