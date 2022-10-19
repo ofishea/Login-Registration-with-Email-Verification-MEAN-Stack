@@ -1,0 +1,44 @@
+<ion-split-pane contentId="main">
+    <!--  the side menu  -->
+     <ion-menu side="start" contentId="main" *ngIf="account">
+  
+       <div class="profile_content ion-padding">
+           <div class="profile">
+             <ion-avatar>
+               <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+             </ion-avatar>
+             <h1>{{account.firstName}} {{account.lastName}}</h1>
+           </div>
+       </div>
+      <ion-content class="ion-padding">
+        <ion-menu-toggle>
+        <h2></h2>
+        <h3></h3>
+  
+        <div class="menu-content">
+          <ion-item lines="none" (click)="onHome()">
+            <ion-icon slot="start" name="home" color="light"></ion-icon>
+            <ion-label>Home</ion-label>
+          </ion-item>
+          <ion-item *ngIf="account.role === Role.Admin" lines="none" (click)="onAdmin()">
+            <ion-icon slot="start" name="home" color="light"></ion-icon>
+            <ion-label>Admin Panel</ion-label>
+          </ion-item>
+          <ion-item lines="none" (click)="logout()">
+            <ion-icon slot="start" name="help-circle" color="light"></ion-icon>
+            <ion-label>Sign Out</ion-label>
+          </ion-item>
+        </div>
+  
+      </ion-menu-toggle>
+      </ion-content>
+  
+    </ion-menu>
+    <!-- the main content -->
+    <ion-router-outlet id="main"></ion-router-outlet>
+  </ion-split-pane>
+  
+  
+
+ <!-- global alert -->
+ <alert></alert>
