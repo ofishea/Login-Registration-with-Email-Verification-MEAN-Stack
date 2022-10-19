@@ -11,6 +11,23 @@
            </div>
        </div>
       <ion-content class="ion-padding">
+        <h2></h2>
+        <h3></h3>
+  
+        <div class="menu-content d-none d-md-block">
+          <ion-item lines="none" (click)="onHome()">
+            <ion-icon slot="start" name="home" color="light"></ion-icon>
+            <ion-label>Home</ion-label>
+          </ion-item>
+          <ion-item *ngIf="account.role === Role.Admin" lines="none" (click)="onAdmin()">
+            <ion-icon slot="start" name="home" color="light"></ion-icon>
+            <ion-label>Admin Panel</ion-label>
+          </ion-item>
+          <ion-item lines="none" (click)="logout()">
+            <ion-icon slot="start" name="help-circle" color="light"></ion-icon>
+            <ion-label>Sign Out</ion-label>
+          </ion-item>
+        </div>
         <ion-menu-toggle>
         <h2></h2>
         <h3></h3>

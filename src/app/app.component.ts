@@ -35,7 +35,7 @@ export class AppComponent {
     this.router.navigate(['admin']);
   }
   onHome() {
-    this.router.navigate(['home']);
+    this.router.navigate(['profile']);
   }
 
 }
