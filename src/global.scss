@@ -1,0 +1,210 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+@import 'theme/variables.scss';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+
+.flex
+{
+    display: flex;
+}
+
+.flexd
+{
+    flex-direction: column;
+}
+
+
+.al-start
+{
+    align-items: flex-start;
+}
+
+.al-center
+{
+    align-items: center;
+}
+
+.al-end
+{
+    align-items: flex-end;
+}
+
+.jc-start
+{
+    justify-content: flex-start;
+}
+
+
+.jc-center
+{
+    justify-content: center;
+}
+
+.jc-end
+{
+    justify-content: flex-end;
+}
+
+.jc-between
+{
+    justify-content: space-between;
+}
+
+.jc-around
+{
+    justify-content: space-around;
+}
+
+
+ion-button
+{
+    text-transform: none;
+    --background: #88038d;
+}
+
+
+ion-tab-bar
+{
+   --background: #1D1F30;
+}
+.btn-holder
+{
+    ion-button
+    {
+        --background: #88038d;
+        --border-radius: 15px;
+        --color:white;
+        font-family: 'CSMedium';
+        font-size: 16px;
+        height: 3rem;
+        width: 60%;
+    }
+}
+
+.the-form
+{
+    .input-item
+    {
+        margin: 20px 0;
+        ion-input
+        {
+            color: white;
+            font-family: 'CSBook';
+            --background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px) !important;
+            border-radius: 15px;
+            margin-top: 10px;
+
+            .password
+            {
+                ion-icon
+                {
+                    color: #A0A3BD;
+                }
+            }
+        }
+        ion-label
+        {
+            color: #9496BA;
+            font-family: 'CSMedium';
+        }
+    }
+}
+
+
+.ripple-parent {
+    position: relative;
+    overflow: hidden;
+  }
+
+:root {
+    --animate-delay: 0.5s;
+  }
+
+  .search-holder
+  {
+      ion-searchbar
+      {
+          .searchbar-input-container {
+              input {
+                background: #F6F7FF !important;
+                box-shadow: none !important;
+                border-radius: 15px !important;
+                border: 1px solid #8e929e4f;
+                font-family: 'CSBook';
+              }
+            }
+      }
+  }
+
+  ion-toolbar
+{
+    --background: #88038d;
+    --padding-top: 30px;
+    ion-icon
+    {
+        --color: #ffffff;
+    }
+
+    ion-title
+    {
+        --color: #ffffff;
+        font-family: 'CSMedium';
+        font-size: 15px;
+    }
+}
+
+
+  .apexcharts-legend-text
+  {
+      color: white !important;
+  }
+ 
+ ion-modal.history-class::part(content) {
+    --height: 70%;
+    position: absolute;
+    top: 30%;
+    --width: 100%;
+    border-radius: 25px;
+    display: block;
+ }
+  // Desktop
+
+  ion-header .toolbar {
+   margin: auto;
+  }
+
+  @media (min-width: map-get($grid-breakpoints, lg)) {
+   ion-navbar.toolbar,
+   ion-header .toolbar[fixed],
+   ion-footer .toolbar[fixed],
+   ion-tabs .tabbar {
+     margin: 0;
+     padding-right: calc((100% - #{map-get($grid-max-widths, lg)}) / 2);
+     padding-left: calc((100% - #{map-get($grid-max-widths, lg)}) / 2);
+   }
+  }
