@@ -1,0 +1,56 @@
+<ion-header class="ion-no-border d-md-none" [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ <ion-grid fixed>
+<ion-row class="ion-justify-content-center">
+<div class="col-lg-6 col-md-10">
+
+  <div class="top-holder">
+    <div class="profile-holder">
+      <ion-avatar>
+        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" alt="">
+        <div class="btn ion-activatable flex al-center jc-center ripple-parent">
+          <ion-icon name="camera"></ion-icon>
+          <ion-ripple-effect type="bounded"></ion-ripple-effect>
+        </div>
+      </ion-avatar>
+ <h1>@{{account.userName}}</h1>
+      <p>{{account.firstName}} {{account.lastName}}</p>
+    </div>
+  </div>
+
+  <div class="the-list ">
+    <ion-item routerLink="settings" lines="none" detail>
+      <div class="thumb flex al-center jc-center" slot="start">
+        <ion-buttons slot="start">
+          <ion-button color="dark">
+            <ion-icon name="settings"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </div>
+      <ion-label>Settings</ion-label>
+    </ion-item>
+    <a (click)="logout()">
+      <ion-item lines="none" detail>
+      <div class="thumb flex al-center jc-center" slot="start">
+        <ion-buttons slot="start">
+          <ion-button color="dark">
+            <ion-icon name="log-out"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </div>
+      <ion-label>Sign Out</ion-label>
+    </ion-item>
+  </a>
+  </div>
+      </div>
+        </ion-row>
+        </ion-grid>
+</ion-content>
