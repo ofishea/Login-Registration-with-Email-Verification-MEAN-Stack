@@ -1,0 +1,126 @@
+ion-toolbar
+{
+    --background: #88038d;
+    ion-icon
+    {
+        --color: #ffffff;
+    }
+
+    ion-title
+    {
+        --color: #ffffff;
+        font-family: 'CSMedium';
+        font-size: 15px;
+    }
+}
+ion-content
+{
+    --background: #b4b2ad;
+   .logo-holder
+   {
+       width: 100%;
+       .the-logo
+       {
+           position: relative;
+           width: fit-content;
+           margin: 1vw auto 0 auto;
+           img
+           {
+               height: 7rem;
+           }
+
+           .small-circle
+           {
+               border-radius: 50%;
+               border: 8px solid #c869f4d8;
+               background: #FBEEFF;
+               height: 2rem;
+               position: absolute;
+               top: 0;
+               right: 20px;
+               width: 2rem;
+           }
+
+           .name-holder
+           {
+               h1
+               {
+                   color: #FBEEFF;
+                   font-family: 'CSBold';
+                   margin-top: 5px;
+               }
+           }
+       }
+   }
+
+   .the-form
+   {
+     background: rgba(255, 255, 255, 0.05);
+     border-radius: 10px;
+     position: relative;
+     flex-direction: column;
+     align-items: center;
+     width: 100%;
+     height: auto;
+     padding: 2vw 4vw;
+     margin: 1vw auto 2vw auto;
+     .forgot-holder {
+         font-size: 13px;
+         margin-bottom: 5px;
+         --color: #88038d;
+     }
+   }
+
+   .title-holder
+   {
+       margin: 1vw auto 3vw auto;
+       font-family: 'CSBold';
+       h1
+       {
+           color: #EDEEFA;
+           font-family: 'CSBold';
+           font-size: 30px;
+       }
+   }
+
+
+   .btn-holder
+   {
+       margin-top: 30px;
+       ion-button
+       {
+           margin: 0 auto;
+       }
+   }
+
+   .social-holder
+   {
+       margin-top: 20px;
+       .btn
+       {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            height: 45px;
+            margin: 0 10px;
+            width: 45px;
+       }
+   }
+
+   .bottom-holder
+   {
+       h5
+       {
+           color: #9496BA;
+           font-family: 'CSBook';
+           font-size: 12px;
+       }
+
+       h3
+       {
+           color: #FFFF;
+           font-family: 'CSMedium';
+           font-size: 12px;
+           margin-top: 0;
+       }
+   }
+}
