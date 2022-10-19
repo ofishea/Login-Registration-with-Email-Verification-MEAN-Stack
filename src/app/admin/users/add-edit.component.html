@@ -7,14 +7,9 @@
         </ion-buttons>
       <ion-title class="ion-text-center" *ngIf="isAddMode">Create Account</ion-title>
       <ion-title class="ion-text-center" *ngIf="!isAddMode">Edit Account</ion-title>
-       <ion-buttons slot="end">
-         <ion-button (click)="onSettings()" color="dark">
-           <ion-icon name="cog-outline"></ion-icon>
-         </ion-button>
-       </ion-buttons>
     </ion-toolbar>
   </ion-header>
-  <div style="background: #EAB355;">
+  <div style="background: #b4b2ad;">
     <div class="profile_content ion-padding d-none d-md-block">
         <div class="profile">
           <ion-thumbnail>
@@ -124,10 +119,10 @@
         </div>
         <div class="btn-holder ion-text-center">
             <div class="form-group">
-        <button [disabled]="loading" class="btn btn-primary">
+        <ion-button expand="block" type="submit" [disabled]="loading" class="btn-block">
             <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
             Save
-        </button>
+        </ion-button>
             </div>
           </div>
       </form>
